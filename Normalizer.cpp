@@ -7,6 +7,9 @@
 //
 
 #include "Normalizer.hpp"
+#include <iostream>
+
+using namespace std;
 
 /// normalizes a vector of size Frames/gesture * Properties/frame + 1
 /// the target is at index 0.
@@ -14,8 +17,10 @@ void Normalizer::normalize(VectorFloat &frames) {
     }
 
 
-VectorFloat Normalizer::noVelocityPredict(VectorFloat frames) {
+VectorFloat Normalizer::noVelocityPredict(VectorFloat frames, int offset) {
     int framesPerGesture = int(frames.size()) / PROPERTIES_PER_FRAME;
+    int xIndex = 0;
+    
     // load x's and y's, into an array to calculate min/max
     VectorFloat xPositions = VectorFloat(framesPerGesture);
     VectorFloat yPositions = VectorFloat(framesPerGesture);
@@ -24,10 +29,18 @@ VectorFloat Normalizer::noVelocityPredict(VectorFloat frames) {
     VectorFloat newFrames = VectorFloat(framesPerGesture*2);
     
     for (int i = 0; i < framesPerGesture; i++) {
-        int xIndex = i * PROPERTIES_PER_FRAME;
+        
+        if (offset == 1) {
+          xIndex = i * PROPERTIES_PER_FRAME + 1;
+        }
+        else {
+          xIndex = i * PROPERTIES_PER_FRAME;
+        }
         xPositions[i] = frames[xIndex];
         int yIndex = xIndex + 1;
         yPositions[i] = frames[yIndex];
+        
+        
     }
     // calculate min, max, spread
     float minX = minimum(xPositions);

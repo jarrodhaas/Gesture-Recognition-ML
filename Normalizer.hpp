@@ -40,7 +40,7 @@ public:
     void normalize(MatrixFloat &frames);
     void normalize(VectorFloat &frames);
     VectorFloat normalizePredict(VectorFloat frames);
-    VectorFloat noVelocityPredict(VectorFloat frames);
+    VectorFloat noVelocityPredict(VectorFloat frames, int offset);
     
 private:
     float minimum(VectorFloat vector);

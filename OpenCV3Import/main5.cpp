@@ -37,16 +37,6 @@ int iHighS = 255;
 int iLowV = 60;
 int iHighV = 255;
 
-/*int iLowH = 30;
-int iHighH = 86;
-
-int iLowS = 30;
-int iHighS = 235;
-
-int iLowV = 140;
-int iHighV = 230;
-*/
-
 
 Normalizer normalizer;
 
@@ -120,17 +110,35 @@ float minimumY(VectorFloat vector, int size) {
 // initialize precapture window
 int doCapture() {
     
+    // init DTW training file
+    
+    //Create a new instance of the TimeSeriesClassificationData
+    TimeSeriesClassificationData trainingData;
+    
+    //Set the dimensionality of the data (you need to do this before you can add any samples)
+    trainingData.setNumDimensions( 2 );
+    
+    //You can also give the dataset a name (the name should have no spaces)
+    trainingData.setDatasetName("DTWTest");
+    
+    //You can also add some info text about the data
+    trainingData.setInfoText("This data contains some DTW timeseries data");
+    
+    MatrixDouble trainingSample;
+    
+    //Here you would record a time series, when you have finished recording the time series then add the training sample to the training data
+    UINT gestureLabel = 5;
+    
+    // end init DTW
+    
+    
     int iLastX = -1;
     int iLastY = -1;
     
     VectorFloat frameFloats = VectorFloat(FRAMES_PER_GESTURE*4 + 1);
-    VectorFloat noVelocity = VectorFloat(60);
-    
-    Mat normTest;
     
     //Capture a temporary image from the camera
     Mat imgTmp;
-    
     cap.read(imgTmp);
     
     //Create a black image with the size as the camera output
@@ -159,7 +167,7 @@ int doCapture() {
         flopTime = high_resolution_clock::now();
         
         std::thread t1(capThread, std::ref(imgOriginal));
-
+        
         
         
         //Convert the captured frame from BGR to HSV
@@ -191,39 +199,28 @@ int doCapture() {
             int posX = dM10 / dArea;
             int posY = dM01 / dArea;
             
-//            flopTime = high_resolution_clock::now();
+            //            flopTime = high_resolution_clock::now();
             
             // if < 30 for x frames, then start capture sequence
             
             
             if (now_sampling == true && frame_counter < FRAMES_PER_GESTURE) {
-//                 cout << "FRAME CAPTURE INITIATED" << endl;
+                //                 cout << "FRAME CAPTURE INITIATED" << endl;
                 
                 
                 if (iLastX >= 0 && iLastY >= 0 && posX >= 0 && posY >= 0) {
                     line(imgLines, Point(posX, posY), Point(iLastX, iLastY), Scalar(0,0,255), 2);
-
-                    //TODO: test boundary times...
-                    high_resolution_clock::time_point tempTime = flopTime;
-                    flopTime = high_resolution_clock::now();
-                    long mSec = duration_cast<milliseconds>( flopTime - tempTime ).count();
-                    if (mSec == 0 || mSec > 100) {
-                        cout << "frame_counter: " << frame_counter << endl;
-                    }
-                    //TODO: record each frame into a gesture vector...
+                    
+                    
                     int baseIndex = (frame_counter * 4)+1;
-    
+                    
                     frameFloats[baseIndex] = float(posX);
                     frameFloats[baseIndex+ 1] = float(posY);
-                    frameFloats[baseIndex+ 2] = float(iLastX - posX)/float(mSec);
-                    frameFloats[baseIndex+ 3] = float(iLastY - posY)/float(mSec);
+                    frameFloats[baseIndex+ 2] = float(iLastX - posX)/float(1);
+                    frameFloats[baseIndex+ 3] = float(iLastY - posY)/float(1);
 
                     
-                    if (baseIndex-1 == 0) {
-                        frameFloats[3] = 0;
-                        frameFloats[4] = 0;
-                    }
-
+                    
                 }
                 
                 frame_counter++;
@@ -233,26 +230,25 @@ int doCapture() {
                 frame_counter++;
                 cout << "Finished sampling! :)" << endl;
                 
-                // offset set to one bc of class label
-                noVelocity = normalizer.noVelocityPredict(frameFloats,1);
+                //normalizer.normalize(frameFloats);
                 
-                // multiply normed values by 20
-                for (int i =0; i < 60; i++) {
-                    
-                    noVelocity[i] = noVelocity[i]*100;
-                    
-                }
+                //
+                // start write file
+                //
                 
                 
-                // draw rescaled normed values for testing, should display in upper right
-                for (int i = 1; i < 30; i++) {
-                    line(normTest, Point(noVelocity[i*2], noVelocity[i*2+1]),
-                         Point(noVelocity[(i-1)*2], noVelocity[(i-1)*2+1]), Scalar(0,0,255), 2);
-                    
-                }
-
+                //filer.load();
+                
+                /*leviosa = 1,
+                 circa = 2,
+                 expulsio = 3
+                 mophiosa = 5
+                 serpincio = 6*/
                 
                 
+                
+                
+                //TODO: clear gesture vector...
             }
             
             
@@ -261,10 +257,8 @@ int doCapture() {
         }
         
         
-        imgOriginal = imgOriginal + normTest;
-        
         // add lines to image
-         imgOriginal = imgOriginal + imgLines;
+        imgOriginal = imgOriginal + imgLines;
         
         // generate mirror image
         cv::Mat dst;
@@ -281,22 +275,59 @@ int doCapture() {
         
         t1.join();
         
+        // imshow("Original", imgLines); //show the original image
+        // imshow("Original", imgOriginal); //show the original image
         
         int key_press = waitKey(1);
         
         if (key_press == 27) {
             cout << "esc key is pressed by user" << endl;
+            
+            
+            //write to file on exit
+            if( !trainingData.saveDatasetToFile( "DTWTrainingData.txt" ) ){
+                cout << "Failed to save dataset to file!\n";
+                return EXIT_FAILURE;
+            }
+            
             break;
         }
         else if (key_press == 13 && frame_counter >=30) {
             now_sampling = true;
             frame_counter = 0;
             
-            filer.appendGesture(frameFloats, circa);
+            //filer.appendGesture(frameFloats, circa);
             numCaptured++;
             cout << "captured " << numCaptured << endl;
             imgLines = Mat::zeros( imgTmp.size(), CV_8UC3 );
-            normTest = Mat::zeros( imgTmp.size(), CV_8UC3 );
+            
+            // if we want to keep the data normalize it; NOTE offset set to 1 because of class label
+            VectorFloat noVelocity = normalizer.noVelocityPredict(frameFloats,1);
+            
+            for (int i =0; i < 60; i++) {
+                cout << noVelocity[i] << ", ";
+            }
+            
+            
+            VectorDouble sample( trainingData.getNumDimensions() );
+            
+            for (int i =0; i < FRAMES_PER_GESTURE; i++) {
+            
+               sample[0] = noVelocity[i*2];
+               sample[1] = noVelocity[i*2+1];
+                
+              //Add the sample to the training sample
+              trainingSample.push_back( sample );
+            }
+            
+            
+            //record to DTW datset
+            
+            // if we accept, Add the training sample to the dataset
+            trainingData.addSample( gestureLabel, trainingSample );
+            
+            //Clear any previous timeseries
+            trainingSample.clear();
             
         }
         
@@ -305,10 +336,12 @@ int doCapture() {
             frame_counter = 0;
             cout << "capture" << endl;
             imgLines = Mat::zeros( imgTmp.size(), CV_8UC3 );
-            normTest = Mat::zeros( imgTmp.size(), CV_8UC3 );
+            
+            //Clear any previous timeseries
+            trainingSample.clear();
             
         }
-            
+        
         
     }
     
@@ -324,12 +357,12 @@ int doMagic() {
     VectorFloat frameFloats = VectorFloat((FRAMES_PER_GESTURE*4));
     VectorFloat frameFloatsReset = VectorFloat((FRAMES_PER_GESTURE*4));
     
-
-    // ver 5 float spellThresh[] = {.7, .78, .60, .63, .65};
-    //float spellThresh[] = {.7, .78, .60, .60, .54}; -- adaboosttest6
- 
+    MatrixDouble trainingSample;
+    VectorDouble sample( 2 ); // 2 dimensions (x,y)
     
-    float spellThresh[] = {.7, .82, .49, .63, .5};
+    
+    // ver 5 float spellThresh[] = {.7, .78, .60, .63, .65};
+    float spellThresh[] = {.7, .78, .60, .60, .54};
     
     string spellNames[] = {"line", "circle", "expulsio", "McDonalds", "Serpensensio"};
     int location[] = {1280/4, 720/4};
@@ -350,7 +383,7 @@ int doMagic() {
     // load the training data
     
     //Load the pipeline from a file
-    if( !pipeLineToTest.load( "AdaBoostCrossTest" ) ){
+    if( !pipeLineToTest.load( "DTWPipelineTest" ) ){
         cout << "ERROR: Failed to load the pipeline!\n";
                //return EXIT_FAILURE;
     }
@@ -362,7 +395,7 @@ int doMagic() {
     //Create a black image with the size as the camera output
     Mat imgLines = Mat::zeros( imgTmp.size(), CV_8UC3 );
     
-
+    
     high_resolution_clock::time_point timex = high_resolution_clock::now();
     high_resolution_clock::time_point time2;
     long totalDuration;
@@ -391,7 +424,7 @@ int doMagic() {
     VectorFloat classesFloat = VectorFloat(4);
     
     while (true) {
-
+        
         high_resolution_clock::time_point time0 = high_resolution_clock::now();
         
         std::thread t1(capThread, std::ref(imgOriginal));
@@ -434,7 +467,7 @@ int doMagic() {
             posX = (dM10 / dArea);
             posY = (dM01 / dArea);
             
-         
+            
             high_resolution_clock::time_point beforeT = betweenTime;
             high_resolution_clock::time_point betweenTime = high_resolution_clock::now();
             long mSec = duration_cast<milliseconds>( beforeT - betweenTime ).count();;
@@ -453,33 +486,33 @@ int doMagic() {
             // if less than FRAMES_PER_GESTURE-1 frames, add frame
             
             if (frame_counter < FRAMES_PER_GESTURE - 1) {
-            
                 
-              // store current frame data
-            
+                
+                // store current frame data
+                
                 frameFloats[baseIndex] = roundf(float(posX) / ALIAS_FACTOR);
                 frameFloats[baseIndex+ 1] = roundf(float(posY) / ALIAS_FACTOR);
                 frameFloats[baseIndex+ 2] = roundf((float(iLastX - posX)/ALIAS_FACTOR))/float(sec);
                 frameFloats[baseIndex+ 3] = roundf((float(iLastY - posY)/ALIAS_FACTOR))/float(sec);
-
+                
                 
                 
                 
                 baseIndex += 4;
                 
-              if (iLastX == -1 && iLastY == -1) {
-                  frameFloats[0] = 0;
-                  frameFloats[1] = 0;
-              }
-             
+                if (iLastX == -1 && iLastY == -1) {
+                    frameFloats[0] = 0;
+                    frameFloats[1] = 0;
+                }
+                
                 for (int i = 0; i < 120; i++) {
                     
-                    cout << frameFloats[i] << ", ";
+                   // cout << frameFloats[i] << ", ";
                 }
-                cout << endl;
-             
+               // cout << endl;
                 
-    
+                
+                
             }
             else if (frame_counter >= FRAMES_PER_GESTURE - 1){
                 
@@ -498,23 +531,41 @@ int doMagic() {
                 frameFloats[baseIndex+3] = roundf((float(iLastY - posY)/ALIAS_FACTOR))/float(sec);
                 
                 
-                if (wandThreshX > 50 || wandThreshY > 50) {
-                
+                if (1==1) {
+                    
+                    
                     // normalize data
                     //VectorFloat normedPredictable = normalizer.normalizePredict(frameFloats);
                     VectorFloat noVelocity = normalizer.noVelocityPredict(frameFloats,0);
                     
                     
-    //                for (int i = 0; i < 120; i++) {
-    //                 cout << normedPredictable[i] << ", ";
-    //                 }
                     
-                    // send to pipeline
-                
-                    ////// change this as well!
+                    //Clear previous timeseries
+                    trainingSample.clear();
+                    
+                    // copy the frame buffer to a DTW data type
+                    // change to i+=4 and = frameFloats[i] etc for non-normalized
+                    
+                    for (int i =0; i < FRAMES_PER_GESTURE; i++){
+                        
+                        sample[0] = noVelocity[i*2];
+                        sample[1] = noVelocity[i*2+1];
+                        
+                        //Add the sample to the training sample
+                        trainingSample.push_back( sample );
+                        
+                    }
+                    
+                    cout << endl;
                     
                     
-                    pipeLineToTest.predict(noVelocity );
+                    // predict gesture
+                    
+                    //pipeLineToTest.predict(noVelocity );
+                    
+                    pipeLineToTest.predict(trainingSample);
+                    
+                    
                     unsigned int predictedClassLabel = pipeLineToTest.getPredictedClassLabel();
                     classesFloat = pipeLineToTest.getClassLikelihoods();
                     for (int i = 0; i < classesFloat.size(); i++) {
@@ -530,7 +581,7 @@ int doMagic() {
                     for (int i = 0; i < classesFloat.size(); i++) {
                         
                         if (classesFloat[i] > spellThresh[i]) {
-                           
+                            
                             celebrate = i+1;
                             break;
                             
@@ -538,38 +589,34 @@ int doMagic() {
                         
                     }
                 }
-             
+                
             }
             
             if (frame_counter < FRAMES_PER_GESTURE - 1) {
-              frame_counter++;
+                frame_counter++;
             }
             
             // draw magic lines
-        
+            
             
             imgLines.release();
             imgLines = Mat::zeros( imgTmp.size(), CV_8UC3 );
             
-         
-              for (int i = 1; i < FRAMES_PER_GESTURE; i++) {
+            
+            for (int i = 1; i < FRAMES_PER_GESTURE; i++) {
                 
                 if ( frameFloats[(i-1)*4] > 0 && frameFloats[i*4] > 0 ) {
                     //Draw a red line from the previous point to the current point
                     line(imgLines, Point(frameFloats[(i-1)*4], frameFloats[(i-1)*4+1]),
                          Point(frameFloats[i*4], frameFloats[i*4+1]), Scalar(0,0,255), 2);
                 }
-            
-              }
-            
-            
-            
                 
+            }
+            
+            
             iLastX = posX;
             iLastY = posY;
         }
-        
-        
         
         
         // add lines to image
@@ -584,8 +631,8 @@ int doMagic() {
         warpAffine(dst, rotated_img, rot_matrix, dst.size());
         
         if(celebrate && celeTimer < 50){
-            string message = "You're a fucking wizard! You cast " + spellNames[celebrate-1] + "! Way to go.";
-            cout << message << endl;
+            string message = "You're a wizard! You cast " + spellNames[celebrate-1] + "! Way to go.";
+            //cout << message << endl;
             putText(rotated_img, message, Point(location[1], location[1]), font, 1, (255,255,255), 5);
             celeTimer += 1;
             if (celeTimer == 50){
@@ -601,7 +648,7 @@ int doMagic() {
         
         imshow("flipped",rotated_img);
         
-
+        
         //measuring time...
         time2 = high_resolution_clock::now();
         auto duration2 = duration_cast<milliseconds>( time2 - time1 ).count();
@@ -648,7 +695,7 @@ int doMagic() {
     cout << "Celebrate: " << celebrate << endl;
     return celebrate;
     
- 
+    
 }
 
 ///TRAINER
@@ -662,18 +709,7 @@ int main( int argc, char** argv ) {
     //create a window called "Control"
     namedWindow("Control", CV_WINDOW_AUTOSIZE);
     
-    /*//Create trackbars in "Control" window
-    //Hue (0 - 179)
-    createTrackbar("LowH", "Control", &iLowH, 179);
-    createTrackbar("HighH", "Control", &iHighH, 179);
-    //Saturation (0 - 255)
-    createTrackbar("LowS", "Control", &iLowS, 255);
-    createTrackbar("HighS", "Control", &iHighS, 255);
-    //Value (0 - 255)
-    createTrackbar("LowV", "Control", &iLowV, 255);
-    createTrackbar("HighV", "Control", &iHighV, 255);*/
-    
-    
+    //Create trackbars in "Control" window
     //Hue (0 - 179)
     createTrackbar("LowH", "Control", &iLowH, 179);
     createTrackbar("HighH", "Control", &iHighH, 179);
@@ -685,9 +721,9 @@ int main( int argc, char** argv ) {
     createTrackbar("HighV", "Control", &iHighV, 255);
     
     
- 
+    
     doMagic();
-   
+    
     
     return 0;
 }

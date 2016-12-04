@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9276B4B61DE7F942008A5F1C /* BarDrawer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9276B4B41DE7F942008A5F1C /* BarDrawer.cpp */; };
 		92808CA91DD6C1930043D10D /* Normalizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92808CA71DD6C1930043D10D /* Normalizer.cpp */; };
-		9282B0021DD688E4007D04F6 /* main4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 927263451DD67FB600F32966 /* main4.cpp */; };
+		929009561DF3CECF00CAFF64 /* main4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 927263451DD67FB600F32966 /* main4.cpp */; };
+		92B69F721DEFFAB900E78D9A /* BarDrawer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9276B4B41DE7F942008A5F1C /* BarDrawer.cpp */; };
 		BD65EDDC1DE3BEA20033D159 /* FileIO.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BD65EDDA1DE3BEA20033D159 /* FileIO.cpp */; };
 		BD65EDDF1DE3BF360033D159 /* XYVV.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BD65EDDD1DE3BF360033D159 /* XYVV.cpp */; };
 /* End PBXBuildFile section */
@@ -27,13 +27,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		9231A4001DD678D500610FF6 /* main3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main3.cpp; sourceTree = "<group>"; };
+		921E81161DEFBC7100092117 /* dtwtest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dtwtest.cpp; sourceTree = "<group>"; };
 		927263451DD67FB600F32966 /* main4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main4.cpp; sourceTree = "<group>"; };
 		9276B4B41DE7F942008A5F1C /* BarDrawer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BarDrawer.cpp; sourceTree = "<group>"; };
 		9276B4B51DE7F942008A5F1C /* BarDrawer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BarDrawer.hpp; sourceTree = "<group>"; };
 		92808CA71DD6C1930043D10D /* Normalizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Normalizer.cpp; path = ../Normalizer.cpp; sourceTree = "<group>"; };
 		92808CA81DD6C1930043D10D /* Normalizer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Normalizer.hpp; path = ../Normalizer.hpp; sourceTree = "<group>"; };
 		92AE3BD01DC802CA00EEC090 /* main2.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main2.cpp; sourceTree = "<group>"; };
+		92B69F6C1DEFC48400E78D9A /* main5.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main5.cpp; sourceTree = "<group>"; };
 		BD65EDDA1DE3BEA20033D159 /* FileIO.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FileIO.cpp; sourceTree = "<group>"; };
 		BD65EDDB1DE3BEA20033D159 /* FileIO.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FileIO.hpp; sourceTree = "<group>"; };
 		BD65EDDD1DE3BF360033D159 /* XYVV.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XYVV.cpp; sourceTree = "<group>"; };
@@ -41,7 +42,6 @@
 		BD65EDE11DE3C3200033D159 /* SpellEnum.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SpellEnum.hpp; sourceTree = "<group>"; };
 		BD65EDE41DE3C6F50033D159 /* Constants.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Constants.hpp; sourceTree = "<group>"; };
 		BDCF7E371DBFEC57000A5A68 /* OpenCV3Import */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OpenCV3Import; sourceTree = BUILT_PRODUCTS_DIR; };
-		BDCF7E3A1DBFEC57000A5A68 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,9 +74,8 @@
 		BDCF7E391DBFEC57000A5A68 /* OpenCV3Import */ = {
 			isa = PBXGroup;
 			children = (
-				BDCF7E3A1DBFEC57000A5A68 /* main.cpp */,
-				9231A4001DD678D500610FF6 /* main3.cpp */,
 				927263451DD67FB600F32966 /* main4.cpp */,
+				92B69F6C1DEFC48400E78D9A /* main5.cpp */,
 				9276B4B41DE7F942008A5F1C /* BarDrawer.cpp */,
 				9276B4B51DE7F942008A5F1C /* BarDrawer.hpp */,
 				BD65EDE41DE3C6F50033D159 /* Constants.hpp */,
@@ -84,6 +83,7 @@
 				BD65EDDB1DE3BEA20033D159 /* FileIO.hpp */,
 				BD65EDE11DE3C3200033D159 /* SpellEnum.hpp */,
 				BD65EDDD1DE3BF360033D159 /* XYVV.cpp */,
+				921E81161DEFBC7100092117 /* dtwtest.cpp */,
 				BD65EDDE1DE3BF360033D159 /* XYVV.hpp */,
 				92AE3BD01DC802CA00EEC090 /* main2.cpp */,
 				92808CA71DD6C1930043D10D /* Normalizer.cpp */,
@@ -149,11 +149,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92B69F721DEFFAB900E78D9A /* BarDrawer.cpp in Sources */,
 				BD65EDDC1DE3BEA20033D159 /* FileIO.cpp in Sources */,
 				92808CA91DD6C1930043D10D /* Normalizer.cpp in Sources */,
-				9276B4B61DE7F942008A5F1C /* BarDrawer.cpp in Sources */,
+				929009561DF3CECF00CAFF64 /* main4.cpp in Sources */,
 				BD65EDDF1DE3BF360033D159 /* XYVV.cpp in Sources */,
-				9282B0021DD688E4007D04F6 /* main4.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

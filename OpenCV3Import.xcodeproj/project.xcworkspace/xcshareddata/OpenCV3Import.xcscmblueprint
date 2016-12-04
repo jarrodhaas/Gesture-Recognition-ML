@@ -1,37 +1,37 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "996BB19BB980251817818F9A0F11635E6420B38D+++AC1F9E8",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "8F2EE5B4FE08F270C7F66CB9DEA8C801D43B820F+++2D754F8",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "996BB19BB980251817818F9A0F11635E6420B38D+++AC1F9E8" : 9223372036854775807,
-    "996BB19BB980251817818F9A0F11635E6420B38D+++DA0633A" : 9223372036854775807,
-    "996BB19BB980251817818F9A0F11635E6420B38D+++53972AB" : 9223372036854775807
+    "996BB19BB980251817818F9A0F11635E6420B38D+++CDD5C24" : 9223372036854775807,
+    "8F2EE5B4FE08F270C7F66CB9DEA8C801D43B820F+++2D754F8" : 9223372036854775807,
+    "996BB19BB980251817818F9A0F11635E6420B38D+++F325DF3" : 9223372036854775807
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "80D6289E-0184-434E-8FC3-26573C65ECEC",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "996BB19BB980251817818F9A0F11635E6420B38D+++AC1F9E8" : "419-project\/",
-    "996BB19BB980251817818F9A0F11635E6420B38D+++DA0633A" : "",
-    "996BB19BB980251817818F9A0F11635E6420B38D+++53972AB" : ""
+    "996BB19BB980251817818F9A0F11635E6420B38D+++CDD5C24" : "..",
+    "8F2EE5B4FE08F270C7F66CB9DEA8C801D43B820F+++2D754F8" : "OpenCV3Import\/",
+    "996BB19BB980251817818F9A0F11635E6420B38D+++F325DF3" : ""
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "OpenCV3Import",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
-  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "OpenCV3Import\/OpenCV3Import.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "OpenCV3Import.xcodeproj",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/jarrodhaas\/OpenCV.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8F2EE5B4FE08F270C7F66CB9DEA8C801D43B820F+++2D754F8"
+    },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/jarrodhaas\/419project.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "996BB19BB980251817818F9A0F11635E6420B38D+++53972AB"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "996BB19BB980251817818F9A0F11635E6420B38D+++CDD5C24"
     },
     {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/kimjune01\/419-project",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/jarrodhaas",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "996BB19BB980251817818F9A0F11635E6420B38D+++AC1F9E8"
-    },
-    {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/kimjune01\/419-project",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "996BB19BB980251817818F9A0F11635E6420B38D+++DA0633A"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "996BB19BB980251817818F9A0F11635E6420B38D+++F325DF3"
     }
   ]
 }
