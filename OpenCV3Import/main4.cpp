@@ -332,8 +332,10 @@ int doMagic() {
     float spellThresh[] = {.7, .82, .49, .63, .5};
     
     string spellNames[] = {"line", "circle", "expulsio", "McDonalds", "Serpensensio"};
-    int location[] = {1280/4, 720/4};
+    int location[] = {20, 30};
     int font = CV_FONT_HERSHEY_SIMPLEX;
+    
+    Scalar color = Scalar(255,255,255);
     
     // track the best threshold for each category
     VectorFloat bestThresh = VectorFloat(5);
@@ -584,9 +586,9 @@ int doMagic() {
         warpAffine(dst, rotated_img, rot_matrix, dst.size());
         
         if(celebrate && celeTimer < 50){
-            string message = "You're a fucking wizard! You cast " + spellNames[celebrate-1] + "! Way to go.";
+            string message = "You're a wizard! You cast " + spellNames[celebrate-1] + "! Way to go.";
             cout << message << endl;
-            putText(rotated_img, message, Point(location[1], location[1]), font, 1, (255,255,255), 5);
+            putText(rotated_img, message, Point(location[1], location[1]), font, 1, color, 3);
             celeTimer += 1;
             if (celeTimer == 50){
                 celebrate = 0;

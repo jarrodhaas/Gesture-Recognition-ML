@@ -365,8 +365,8 @@ int doMagic() {
     float spellThresh[] = {.7, .78, .60, .60, .54};
     
     string spellNames[] = {"line", "circle", "expulsio", "McDonalds", "Serpensensio"};
-    int location[] = {1280/4, 720/4};
-    int font = CV_FONT_HERSHEY_SIMPLEX;
+    int location[] = {1, 1};
+    int font = CV_FONT_HERSHEY_PLAIN;
     
     // track the best threshold for each category
     VectorFloat bestThresh = VectorFloat(5);

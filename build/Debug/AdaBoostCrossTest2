@@ -1,0 +1,737 @@
+GRT_PIPELINE_FILE_V3.0
+PipelineMode: CLASSIFICATION_MODE
+NumPreprocessingModules: 0
+NumFeatureExtractionModules: 0
+NumPostprocessingModules: 0
+Trained: 1
+Info: 
+PreProcessingModuleDatatypes:
+FeatureExtractionModuleDatatypes:
+ClassificationModuleDatatype:	AdaBoost
+PostProcessingModuleDatatypes:
+GRT_ADABOOST_MODEL_FILE_V2.0
+Trained: 1
+UseScaling: 0
+NumInputDimensions: 60
+NumOutputDimensions: 0
+NumTrainingIterationsToConverge: 0
+MinNumEpochs: 0
+MaxNumEpochs: 100
+ValidationSetSize: 20
+LearningRate: 0.1
+MinChange: 1e-05
+UseValidationSet: 0
+RandomiseTrainingOrder: 1
+UseNullRejection: 0
+ClassifierMode: 0
+NullRejectionCoeff: 0.5
+NumClasses: 5
+NullRejectionThresholds:  0 0 0 0 0
+ClassLabels:  1 2 3 5 6
+PredictionMethod: 1
+Models: 
+ClassLabel: 1
+NumWeakClassifiers: 19
+WeakClassifierTypes: 
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+Weights: 0.0728845 0.0744747 0.0570344 0.062223 0.0592046 0.0444459 0.043086 0.0573924 0.0535885 0.0455778 0.0500117 0.06153 0.0577079 0.0506017 0.0344619 0.0461063 0.0443282 0.0464884 0.0388522 
+WeakClassifiers: 
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 5
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.739587
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 14
+Direction: 0
+NumRandomSplits: 100
+DecisionValue: 0.169977
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 38
+Direction: 0
+NumRandomSplits: 100
+DecisionValue: 0.275755
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 26
+Direction: 0
+NumRandomSplits: 100
+DecisionValue: 0.321603
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 9
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.966052
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 42
+Direction: 0
+NumRandomSplits: 100
+DecisionValue: 0.138877
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 52
+Direction: 0
+NumRandomSplits: 100
+DecisionValue: 0.158999
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 32
+Direction: 0
+NumRandomSplits: 100
+DecisionValue: 0.175103
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 39
+Direction: 0
+NumRandomSplits: 100
+DecisionValue: 0.236882
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 24
+Direction: 0
+NumRandomSplits: 100
+DecisionValue: 0.203004
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 4
+Direction: 0
+NumRandomSplits: 100
+DecisionValue: 0.176848
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 7
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.551552
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 20
+Direction: 0
+NumRandomSplits: 100
+DecisionValue: 0.374774
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 45
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.862809
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 12
+Direction: 0
+NumRandomSplits: 100
+DecisionValue: 0.228626
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 36
+Direction: 0
+NumRandomSplits: 100
+DecisionValue: 0.230197
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 33
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.694626
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 42
+Direction: 0
+NumRandomSplits: 100
+DecisionValue: 0.334434
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 39
+Direction: 0
+NumRandomSplits: 100
+DecisionValue: 0.236004
+ClassLabel: 2
+NumWeakClassifiers: 19
+WeakClassifierTypes: 
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+Weights: 0.112302 0.0754713 0.0356141 0.0449811 0.0508633 0.0614033 0.0652821 0.0502701 0.0389404 0.0387226 0.0362908 0.0404199 0.0400551 0.0480208 0.0476675 0.0501695 0.0529162 0.0553539 0.055256 
+WeakClassifiers: 
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 54
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.749942
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 27
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.707961
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 43
+Direction: 0
+NumRandomSplits: 100
+DecisionValue: 0.713996
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 0
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.192306
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 19
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.526278
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 50
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.288406
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 40
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.334703
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 11
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.126359
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 44
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.430318
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 17
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.315575
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 44
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.188542
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 25
+Direction: 0
+NumRandomSplits: 100
+DecisionValue: 0.192113
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 31
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.66008
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 0
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.188526
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 17
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.471959
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 59
+Direction: 0
+NumRandomSplits: 100
+DecisionValue: 0.99902
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 40
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.365737
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 54
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.346259
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 1
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.0302825
+ClassLabel: 3
+NumWeakClassifiers: 19
+WeakClassifierTypes: 
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+Weights: 0.0964874 0.0686264 0.05562 0.0653731 0.0471237 0.0389467 0.0487414 0.0547604 0.0498474 0.0389432 0.0492288 0.0436412 0.0373616 0.0492619 0.04214 0.0454927 0.0477399 0.0626951 0.057969 
+WeakClassifiers: 
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 26
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.831011
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 18
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.849899
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 5
+Direction: 0
+NumRandomSplits: 100
+DecisionValue: 0.314275
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 26
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.665288
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 41
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.680853
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 35
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.852293
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 59
+Direction: 0
+NumRandomSplits: 100
+DecisionValue: 0.0318793
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 28
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.589663
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 46
+Direction: 0
+NumRandomSplits: 100
+DecisionValue: 0.0819869
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 26
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.848328
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 1
+Direction: 0
+NumRandomSplits: 100
+DecisionValue: 0.142163
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 41
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.902263
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 59
+Direction: 0
+NumRandomSplits: 100
+DecisionValue: 0.252208
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 24
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.842667
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 16
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.89239
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 1
+Direction: 0
+NumRandomSplits: 100
+DecisionValue: 0.124235
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 0
+Direction: 0
+NumRandomSplits: 100
+DecisionValue: 0.0824165
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 22
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.700263
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 34
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.718803
+ClassLabel: 5
+NumWeakClassifiers: 9
+WeakClassifierTypes: 
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+Weights: 0.106549 0.161638 0.0858461 0.202495 0.103769 0.111633 0.0500546 0.069018 0.108997 
+WeakClassifiers: 
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 6
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.822932
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 0
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.973922
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 41
+Direction: 0
+NumRandomSplits: 100
+DecisionValue: 0.536715
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 6
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.932145
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 0
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.887721
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 22
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.504784
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 52
+Direction: 0
+NumRandomSplits: 100
+DecisionValue: 0.0270305
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 10
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.979927
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 2
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.931357
+ClassLabel: 6
+NumWeakClassifiers: 19
+WeakClassifierTypes: 
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+DecisionStump
+Weights: 0.0583746 0.0673289 0.0627427 0.061375 0.054827 0.054105 0.0719609 0.0512904 0.0460105 0.0536301 0.0469967 0.0431748 0.0556628 0.0463814 0.0592886 0.0488368 0.0390764 0.0301227 0.0488145 
+WeakClassifiers: 
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 58
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.167687
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 59
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.888373
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 3
+Direction: 0
+NumRandomSplits: 100
+DecisionValue: 0.110623
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 54
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.985689
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 53
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.788774
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 42
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.443635
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 5
+Direction: 0
+NumRandomSplits: 100
+DecisionValue: 0.0315906
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 59
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.862573
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 7
+Direction: 0
+NumRandomSplits: 100
+DecisionValue: 0.285892
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 10
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.623434
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 53
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.752082
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 11
+Direction: 0
+NumRandomSplits: 100
+DecisionValue: 0.263916
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 36
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.834019
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 59
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.642636
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 1
+Direction: 0
+NumRandomSplits: 100
+DecisionValue: 0.0237722
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 56
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.206643
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 33
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.503565
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 51
+Direction: 1
+NumRandomSplits: 100
+DecisionValue: 0.805294
+WeakClassifierType: DecisionStump
+Trained: 1
+NumInputDimensions: 60
+DecisionFeatureIndex: 5
+Direction: 0
+NumRandomSplits: 100
+DecisionValue: 0.0204575
