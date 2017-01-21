@@ -31,16 +31,16 @@ using namespace GRT;
  
  
  */
+const int PROPERTIES_PER_FRAME = 4;
+
 class Normalizer {
     
 public:
-    int PROPERTIES_PER_FRAME = 4;
-    
     
     void normalize(MatrixFloat &frames);
     void normalize(VectorFloat &frames);
     VectorFloat normalizePredict(VectorFloat frames);
-    VectorFloat noVelocityPredict(VectorFloat frames, int offset);
+    VectorFloat noVelocityPredict(VectorFloat frames);
     
 private:
     float minimum(VectorFloat vector);

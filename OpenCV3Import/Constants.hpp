@@ -14,6 +14,9 @@
 
 int FRAMES_PER_GESTURE = 30;
 const int PAGE_BUFFER_SIZE = 1000;
-const int ALIAS_FACTOR = 1;
+const int ALIAS_FACTOR = 10;
+const int NUM_CLASSES = 5;
+const int FRAME_THRESHOLD = 3;
+const int MOVEMENT_THRESHOLD = 50;
 
 #endif /* Constants_hpp */
