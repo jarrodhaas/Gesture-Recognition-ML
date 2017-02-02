@@ -11,9 +11,8 @@
 
 #include "Normalizer.hpp"
 #include "XYVV.hpp"
-#include "SpellEnum.hpp"
 #include "FileIO.hpp"
-#include "Constants.hpp"
+
 #include "BarDrawer.hpp"
 
 using namespace cv;
@@ -34,6 +33,12 @@ int iHighS = 255;
 
 int iLowV = 60;
 int iHighV = 255;
+
+// info for displaying text on screen
+string spellNames[] = {"Line", "Circle", "Expulsio", "McDonalds", "Serpensensio"};
+int text_origin[] = {20, 30};
+int font = CV_FONT_HERSHEY_SIMPLEX;
+Scalar text_color = Scalar(255,255,255);
 
 
 Normalizer normalizer;
@@ -154,6 +159,24 @@ int captureFrame(Mat *imgOriginal) {
     return 1;
 }
 
+void ShouldICelebrate(Mat* imgOriginal, Celebrate* celebrate) {
+    
+    if (celebrate->counter && celebrate->timer < 50) {
+        
+        string message = "You're a wizard! You cast " + spellNames[celebrate->counter-1] + "! Way to go.";
+        
+        putText(*imgOriginal, message, Point(text_origin[1], text_origin[1]), font, 1, text_color, 3);
+        
+        // increment cell timer, up to 50 then stop displaying
+        celebrate->timer += 1;
+        
+        // reset after 50 frames, we don't want to display anymore
+        if (celebrate->timer == 50) {
+            celebrate->counter = 0;
+            celebrate->timer = 0;
+        }
+    }
+}
 
 // initialize precapture window
 int doCapture() {
@@ -362,12 +385,6 @@ int classify() {
     // sensitivity thresholds for classification of each spell
     float spellThresh[] = {.7, .78, .60, .60, .54};
     
-    // info for displaying text on screen
-    string spellNames[] = {"Line", "Circle", "Expulsio", "McDonalds", "Serpensensio"};
-    int text_origin[] = {20, 30};
-    int font = CV_FONT_HERSHEY_SIMPLEX;
-    Scalar text_color = Scalar(255,255,255);
-    
     // for debugging: track highest prediction for each class
     VectorFloat bestThresh = VectorFloat(NUM_CLASSES);
     // debugging: tracks the total classifications beyond threshold per spell
@@ -405,8 +422,7 @@ int classify() {
     
     
     int wandThresh = 0;
-    int celebrate = 0;
-    int celeTimer = 0;
+    Celebrate celebrate;
     int thickness;
     
     
@@ -461,7 +477,7 @@ int classify() {
             //
             //
             // if less than FRAMES_PER_GESTURE-1 frames, add frame
-            if (frame_counter < FRAMES_PER_GESTURE - 1) {
+            if (frame_counter < FRAMES_PER_GESTURE) {
             
                 
                 // store current frame data
@@ -483,7 +499,7 @@ int classify() {
             else {
                 
                 // move last 30 frames back 1 frame
-                for (int i=4; i < (FRAMES_PER_GESTURE * 4); i+=4) {
+                for (int i=4; i < (FRAMES_PER_GESTURE * PROPERTIES_PER_FRAME); i+=4) {
                     frameFloats[i-4] = frameFloats[i];
                     frameFloats[i-3] = frameFloats[i+1];
                     frameFloats[i-2] = frameFloats[i+2];
@@ -491,10 +507,10 @@ int classify() {
                 }
                 
                 // add the new frame to end of set
-                frameFloats[baseIndex] = roundf(float(posX));
-                frameFloats[baseIndex+1] = roundf(float(posY));
-                frameFloats[baseIndex+2] = roundf((float(iLastX - posX)))/float(sec);
-                frameFloats[baseIndex+3] = roundf((float(iLastY - posY)))/float(sec);
+                frameFloats[(FRAMES_PER_GESTURE * PROPERTIES_PER_FRAME)-4] = roundf(float(posX));
+                frameFloats[(FRAMES_PER_GESTURE * PROPERTIES_PER_FRAME)-3] = roundf(float(posY));
+                frameFloats[(FRAMES_PER_GESTURE * PROPERTIES_PER_FRAME)-2] = roundf((float(iLastX - posX)))/float(sec);
+                frameFloats[(FRAMES_PER_GESTURE * PROPERTIES_PER_FRAME)-1] = roundf((float(iLastY - posY)))/float(sec);
                 
                 // if the wand has moved more than MOVEMENT_THRESHOLD we allow the classifier to take a guess
                 if (wandThresh > MOVEMENT_THRESHOLD) {
@@ -532,7 +548,9 @@ int classify() {
                             // Debugging: Record number of classifications per spell -> used to build a confusion matrix
                             guessList[i]++;
                             // Triggers that user should be notified of a recognized gesture
-                            celebrate = i+1;
+                            celebrate.counter = i+1;
+                            //reset display timer so we see the result for a full 50 frames
+                            celebrate.timer = 0;
                             // This ensures that the first valid guess is not overwritten by another
                             break;
                             
@@ -548,14 +566,13 @@ int classify() {
             imgLines.release();
             imgLines = Mat::zeros( imgOriginal.size(), CV_8UC3 );
             
-              // why first 30 frames same thickness?
+              // why are the first 30 frames the same thickness?
             
-              for (int i = 1; i < FRAMES_PER_GESTURE; i++) {
-                
+              for (int i = 1; i < frame_counter; i++) {
                   
                 if ( frameFloats[(i-1)*4] > 0 && frameFloats[i*4] > 0 ) {
                     
-                    thickness = int( pow((FRAMES_PER_GESTURE / float(FRAMES_PER_GESTURE - i + 1)),.5) * 5);
+                    thickness = int( pow((FRAMES_PER_GESTURE / float(FRAMES_PER_GESTURE - i + 1)),0.5) * 3);
                     cout << "Thickness: " << thickness << endl;
                     //Draw a red line from the previous point to the current point
                     line(imgLines, Point(frameFloats[(i-1)*4], frameFloats[(i-1)*4+1]),
@@ -570,24 +587,16 @@ int classify() {
         }
         
         
-        
-        
         // add lines to image
         imgOriginal = imgOriginal + imgLines;
         
         // generate mirror image
         cv::flip(imgOriginal,imgOriginal,1);
         
-        if(celebrate && celeTimer < 50){
-            string message = "You're a wizard! You cast " + spellNames[celebrate-1] + "! Way to go.";
-            //cout << message << endl;
-            putText(imgOriginal, message, Point(text_origin[1], text_origin[1]), font, 1, text_color, 3);
-            celeTimer += 1;
-            if (celeTimer == 50){
-                celebrate = 0;
-                celeTimer = 0;
-            }
-        }
+        
+        // Handle display when a spell is correctly identified
+        // celebrate is non-zero when a spell is identified
+        ShouldICelebrate(&imgOriginal, &celebrate);
         
         
         Drawer.draw(imgOriginal , classesFloat);
@@ -622,8 +631,6 @@ int classify() {
             
                 
             }
-            
-            
             break;
         }
         else if (key == 32) {
@@ -631,13 +638,10 @@ int classify() {
             imgLines = Mat::zeros( imgOriginal.size(), CV_8UC3 );
             cout << "lines eliminate" << endl;
             
-            
         }
-        
     }
     
-    //cout << "Celebrate: " << celebrate << endl;
-    return celebrate;
+    return 0;
     
  
 }

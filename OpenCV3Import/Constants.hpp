@@ -12,11 +12,29 @@
 #include <stdio.h>
 
 
-int FRAMES_PER_GESTURE = 30;
+
+const int FRAMES_PER_GESTURE = 30;
 const int PAGE_BUFFER_SIZE = 1000;
 const int ALIAS_FACTOR = 10;
 const int NUM_CLASSES = 5;
 const int FRAME_THRESHOLD = 3;
 const int MOVEMENT_THRESHOLD = 50;
+
+
+struct Celebrate {
+    int counter = 0;
+    int timer = 0;
+};
+
+
+enum Spell: int {
+    leviosa = 1,
+    circa = 2,
+    expulsio = 3,
+    mophiosa = 5,
+    serpincio = 6
+    
+};
+
 
 #endif /* Constants_hpp */

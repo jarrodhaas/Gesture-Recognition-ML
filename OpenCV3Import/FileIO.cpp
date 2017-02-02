@@ -14,7 +14,6 @@ using namespace std;
 
 void FileIO::appendGesture(VectorFloat frameFloats, Spell spell) {
     ofstream myfile;
-    int FRAMES_PER_GESTURE = frameFloats.size() / 4;
 //   MatrixFloat oldMatrix;
 //    oldMatrix.load("training.csv");
 //    

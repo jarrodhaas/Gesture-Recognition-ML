@@ -9,6 +9,7 @@
 #ifndef BarDrawer_hpp
 #define BarDrawer_hpp
 
+#include "Constants.hpp"
 #include <stdio.h>
 #include "GRT/GRT.h"
 #include "opencv2/highgui/highgui.hpp"

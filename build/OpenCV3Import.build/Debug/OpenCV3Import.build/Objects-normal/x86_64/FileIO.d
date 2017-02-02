@@ -155,4 +155,4 @@ dependencies: \
   /usr/local/include/GRT/ClusteringModules/ClusterTree/ClusterTreeNode.h \
   /usr/local/include/GRT/ClusteringModules/HierarchicalClustering/HierarchicalClustering.h \
   /usr/local/include/GRT/ContextModules/Gate.h \
-  /Users/JRod/Desktop/OpenCVTemplate/419-project/OpenCV3Import/OpenCV3Import/SpellEnum.hpp
+  /Users/JRod/Desktop/OpenCVTemplate/419-project/OpenCV3Import/OpenCV3Import/Constants.hpp

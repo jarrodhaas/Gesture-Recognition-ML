@@ -11,7 +11,7 @@
 
 #include <stdio.h>
 #include "GRT/GRT.h"
-#include "SpellEnum.hpp"
+#include "Constants.hpp"
 
 
 using namespace GRT;

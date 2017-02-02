@@ -1,6 +1,7 @@
 dependencies: \
   /Users/JRod/Desktop/OpenCVTemplate/419-project/OpenCV3Import/OpenCV3Import/BarDrawer.cpp \
   /Users/JRod/Desktop/OpenCVTemplate/419-project/OpenCV3Import/OpenCV3Import/BarDrawer.hpp \
+  /Users/JRod/Desktop/OpenCVTemplate/419-project/OpenCV3Import/OpenCV3Import/Constants.hpp \
   /usr/local/include/GRT/GRT.h \
   /usr/local/include/GRT/Util/GRTVersionInfo.h \
   /usr/local/include/GRT/Util/GRTCommon.h \

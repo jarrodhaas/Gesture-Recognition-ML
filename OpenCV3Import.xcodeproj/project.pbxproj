@@ -33,12 +33,10 @@
 		9276B4B51DE7F942008A5F1C /* BarDrawer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BarDrawer.hpp; sourceTree = "<group>"; };
 		92808CA71DD6C1930043D10D /* Normalizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Normalizer.cpp; path = ../Normalizer.cpp; sourceTree = "<group>"; };
 		92808CA81DD6C1930043D10D /* Normalizer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Normalizer.hpp; path = ../Normalizer.hpp; sourceTree = "<group>"; };
-		92B69F6C1DEFC48400E78D9A /* main5.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main5.cpp; sourceTree = "<group>"; };
 		BD65EDDA1DE3BEA20033D159 /* FileIO.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FileIO.cpp; sourceTree = "<group>"; };
 		BD65EDDB1DE3BEA20033D159 /* FileIO.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FileIO.hpp; sourceTree = "<group>"; };
 		BD65EDDD1DE3BF360033D159 /* XYVV.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XYVV.cpp; sourceTree = "<group>"; };
 		BD65EDDE1DE3BF360033D159 /* XYVV.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = XYVV.hpp; sourceTree = "<group>"; };
-		BD65EDE11DE3C3200033D159 /* SpellEnum.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SpellEnum.hpp; sourceTree = "<group>"; };
 		BD65EDE41DE3C6F50033D159 /* Constants.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Constants.hpp; sourceTree = "<group>"; };
 		BDCF7E371DBFEC57000A5A68 /* OpenCV3Import */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OpenCV3Import; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -74,13 +72,11 @@
 			isa = PBXGroup;
 			children = (
 				927263451DD67FB600F32966 /* main4.cpp */,
-				92B69F6C1DEFC48400E78D9A /* main5.cpp */,
 				9276B4B41DE7F942008A5F1C /* BarDrawer.cpp */,
 				9276B4B51DE7F942008A5F1C /* BarDrawer.hpp */,
 				BD65EDE41DE3C6F50033D159 /* Constants.hpp */,
 				BD65EDDA1DE3BEA20033D159 /* FileIO.cpp */,
 				BD65EDDB1DE3BEA20033D159 /* FileIO.hpp */,
-				BD65EDE11DE3C3200033D159 /* SpellEnum.hpp */,
 				BD65EDDD1DE3BF360033D159 /* XYVV.cpp */,
 				921E81161DEFBC7100092117 /* dtwtest.cpp */,
 				BD65EDDE1DE3BF360033D159 /* XYVV.hpp */,
