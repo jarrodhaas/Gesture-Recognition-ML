@@ -8,10 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		92808CA91DD6C1930043D10D /* Normalizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92808CA71DD6C1930043D10D /* Normalizer.cpp */; };
-		929009561DF3CECF00CAFF64 /* main4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 927263451DD67FB600F32966 /* main4.cpp */; };
+		929009561DF3CECF00CAFF64 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 927263451DD67FB600F32966 /* main.cpp */; };
 		92B69F721DEFFAB900E78D9A /* BarDrawer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9276B4B41DE7F942008A5F1C /* BarDrawer.cpp */; };
 		BD65EDDC1DE3BEA20033D159 /* FileIO.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BD65EDDA1DE3BEA20033D159 /* FileIO.cpp */; };
-		BD65EDDF1DE3BF360033D159 /* XYVV.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BD65EDDD1DE3BF360033D159 /* XYVV.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,18 +26,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		921E81161DEFBC7100092117 /* dtwtest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dtwtest.cpp; sourceTree = "<group>"; };
-		927263451DD67FB600F32966 /* main4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main4.cpp; sourceTree = "<group>"; };
+		927263451DD67FB600F32966 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		9276B4B41DE7F942008A5F1C /* BarDrawer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BarDrawer.cpp; sourceTree = "<group>"; };
 		9276B4B51DE7F942008A5F1C /* BarDrawer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BarDrawer.hpp; sourceTree = "<group>"; };
-		92808CA71DD6C1930043D10D /* Normalizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Normalizer.cpp; path = ../Normalizer.cpp; sourceTree = "<group>"; };
-		92808CA81DD6C1930043D10D /* Normalizer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Normalizer.hpp; path = ../Normalizer.hpp; sourceTree = "<group>"; };
+		92808CA71DD6C1930043D10D /* Normalizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Normalizer.cpp; path = "/Users/JRod/Desktop/OpenCVTemplate/419-project/OpenCV3Import/GestureRecognition/Normalizer.cpp"; sourceTree = "<absolute>"; };
+		92808CA81DD6C1930043D10D /* Normalizer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Normalizer.hpp; sourceTree = "<group>"; };
 		BD65EDDA1DE3BEA20033D159 /* FileIO.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FileIO.cpp; sourceTree = "<group>"; };
 		BD65EDDB1DE3BEA20033D159 /* FileIO.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FileIO.hpp; sourceTree = "<group>"; };
-		BD65EDDD1DE3BF360033D159 /* XYVV.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XYVV.cpp; sourceTree = "<group>"; };
-		BD65EDDE1DE3BF360033D159 /* XYVV.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = XYVV.hpp; sourceTree = "<group>"; };
 		BD65EDE41DE3C6F50033D159 /* Constants.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Constants.hpp; sourceTree = "<group>"; };
-		BDCF7E371DBFEC57000A5A68 /* OpenCV3Import */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OpenCV3Import; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDCF7E371DBFEC57000A5A68 /* GestureRecognition */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = GestureRecognition; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +51,7 @@
 		BDCF7E2E1DBFEC57000A5A68 = {
 			isa = PBXGroup;
 			children = (
-				BDCF7E391DBFEC57000A5A68 /* OpenCV3Import */,
+				BDCF7E391DBFEC57000A5A68 /* GestureRecognition */,
 				BDCF7E381DBFEC57000A5A68 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -63,35 +59,32 @@
 		BDCF7E381DBFEC57000A5A68 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BDCF7E371DBFEC57000A5A68 /* OpenCV3Import */,
+				BDCF7E371DBFEC57000A5A68 /* GestureRecognition */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BDCF7E391DBFEC57000A5A68 /* OpenCV3Import */ = {
+		BDCF7E391DBFEC57000A5A68 /* GestureRecognition */ = {
 			isa = PBXGroup;
 			children = (
-				927263451DD67FB600F32966 /* main4.cpp */,
+				927263451DD67FB600F32966 /* main.cpp */,
 				9276B4B41DE7F942008A5F1C /* BarDrawer.cpp */,
 				9276B4B51DE7F942008A5F1C /* BarDrawer.hpp */,
 				BD65EDE41DE3C6F50033D159 /* Constants.hpp */,
 				BD65EDDA1DE3BEA20033D159 /* FileIO.cpp */,
 				BD65EDDB1DE3BEA20033D159 /* FileIO.hpp */,
-				BD65EDDD1DE3BF360033D159 /* XYVV.cpp */,
-				921E81161DEFBC7100092117 /* dtwtest.cpp */,
-				BD65EDDE1DE3BF360033D159 /* XYVV.hpp */,
 				92808CA71DD6C1930043D10D /* Normalizer.cpp */,
 				92808CA81DD6C1930043D10D /* Normalizer.hpp */,
 			);
-			path = OpenCV3Import;
+			path = GestureRecognition;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BDCF7E361DBFEC57000A5A68 /* OpenCV3Import */ = {
+		BDCF7E361DBFEC57000A5A68 /* GestureRecognition */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BDCF7E3E1DBFEC57000A5A68 /* Build configuration list for PBXNativeTarget "OpenCV3Import" */;
+			buildConfigurationList = BDCF7E3E1DBFEC57000A5A68 /* Build configuration list for PBXNativeTarget "GestureRecognition" */;
 			buildPhases = (
 				BDCF7E331DBFEC57000A5A68 /* Sources */,
 				BDCF7E341DBFEC57000A5A68 /* Frameworks */,
@@ -101,9 +94,9 @@
 			);
 			dependencies = (
 			);
-			name = OpenCV3Import;
+			name = GestureRecognition;
 			productName = OpenCV3Import;
-			productReference = BDCF7E371DBFEC57000A5A68 /* OpenCV3Import */;
+			productReference = BDCF7E371DBFEC57000A5A68 /* GestureRecognition */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -121,7 +114,7 @@
 					};
 				};
 			};
-			buildConfigurationList = BDCF7E321DBFEC57000A5A68 /* Build configuration list for PBXProject "OpenCV3Import" */;
+			buildConfigurationList = BDCF7E321DBFEC57000A5A68 /* Build configuration list for PBXProject "GestureRecognition" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -133,7 +126,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BDCF7E361DBFEC57000A5A68 /* OpenCV3Import */,
+				BDCF7E361DBFEC57000A5A68 /* GestureRecognition */,
 			);
 		};
 /* End PBXProject section */
@@ -146,8 +139,7 @@
 				92B69F721DEFFAB900E78D9A /* BarDrawer.cpp in Sources */,
 				BD65EDDC1DE3BEA20033D159 /* FileIO.cpp in Sources */,
 				92808CA91DD6C1930043D10D /* Normalizer.cpp in Sources */,
-				929009561DF3CECF00CAFF64 /* main4.cpp in Sources */,
-				BD65EDDF1DE3BF360033D159 /* XYVV.cpp in Sources */,
+				929009561DF3CECF00CAFF64 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,7 +304,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BDCF7E321DBFEC57000A5A68 /* Build configuration list for PBXProject "OpenCV3Import" */ = {
+		BDCF7E321DBFEC57000A5A68 /* Build configuration list for PBXProject "GestureRecognition" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BDCF7E3C1DBFEC57000A5A68 /* Debug */,
@@ -321,7 +313,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BDCF7E3E1DBFEC57000A5A68 /* Build configuration list for PBXNativeTarget "OpenCV3Import" */ = {
+		BDCF7E3E1DBFEC57000A5A68 /* Build configuration list for PBXNativeTarget "GestureRecognition" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BDCF7E3F1DBFEC57000A5A68 /* Debug */,

@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:OpenCV3Import.xcodeproj">
+      location = "self:/Users/JRod/Desktop/OpenCVTemplate/419-project/OpenCV3Import/GestureRecognition.xcodeproj">
    </FileRef>
 </Workspace>
